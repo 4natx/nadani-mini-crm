@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Organize contatos, acompanhe oportunidades e planeje tarefas comerciais em um CRM local.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Nadani Mini CRM</title>
+  <link rel="icon" href="./assets/brand.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/crm.css">
+  <script src="./js/app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Ir para o conteúdo</a>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#overview"><img src="./assets/brand.svg" alt="" width="42" height="42"><span>Nadani <strong>Mini CRM</strong></span></a>
+    <div class="workspace-card"><span class="workspace-mark"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#people"></use></svg></span><span><strong id="company-name">Nadani Mini CRM</strong><small>Espaço comercial</small></span></div>
+    <nav aria-label="Navegação principal">
+      <p class="nav-caption">RELACIONAMENTOS</p>
+      <a href="#overview" data-route="overview"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#home"></use></svg>Visão geral</a>
+      <a href="#contacts" data-route="contacts"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#people"></use></svg>Contatos</a>
+      <a href="#companies" data-route="companies"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#box"></use></svg>Empresas</a>
+      <p class="nav-caption">OPERAÇÃO COMERCIAL</p>
+      <a href="#deals" data-route="deals"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#wallet"></use></svg>Oportunidades</a>
+      <a href="#pipeline" data-route="pipeline"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#inventory"></use></svg>Funil</a>
+      <a href="#activities" data-route="activities"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#report"></use></svg>Interações</a>
+      <a href="#tasks" data-route="tasks"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#check"></use></svg>Tarefas</a>
+      <p class="nav-caption">GESTÃO</p>
+      <a href="#analytics" data-route="analytics"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#analytics"></use></svg>Análises</a>
+      <a href="#settings" data-route="settings"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#settings"></use></svg>Configurações</a>
+    </nav>
+    <div class="sidebar-footer"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#lock"></use></svg><span><strong>Dados locais</strong><small>Armazenados neste navegador</small></span></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar">
+      <div class="trail"><button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#menu"></use></svg></button>
+        <span class="trail-parent">Espaço comercial</span><span class="trail-parent" aria-hidden="true">/</span><strong id="breadcrumb">Visão geral</strong></div>
+      <div class="actions header-actions">
+        <button class="icon-button" id="search-global" type="button" aria-label="Pesquisar em todo o CRM" aria-keyshortcuts="Control+K Meta+K"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#search"></use></svg></button>
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="Alternar tema"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#moon"></use></svg></button>
+        <button class="button primary" id="quick-deal" type="button"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#plus"></use></svg><span>Nova oportunidade</span></button>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <noscript><p class="banner">Ative JavaScript para usar o CRM local.</p></noscript>
+      <div class="banner" id="storage-alert" role="alert" hidden></div>
+      <div id="screen" aria-busy="true"><p class="muted" role="status">Abrindo o armazenamento local…</p></div>
+    </main>
+  </div>
+  <dialog id="modal" aria-labelledby="modal-title">
+    <div class="modal-head"><h2 id="modal-title" tabindex="-1"></h2><button class="icon-button" type="button" data-close aria-label="Fechar janela"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#close"></use></svg></button></div>
+    <div id="modal-body"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status"></div>
+</body>
+</html>
